@@ -38,7 +38,7 @@ def main():
 			for every_shot in all_shots:
 				if every_shot.collision(every_asteroid):
 					every_shot.kill()
-					every_asteroid.kill()
+					every_asteroid.split()
 		for sprite in drawable:
 			sprite.draw(screen)
 		dt = clock.tick(60) / 1000
