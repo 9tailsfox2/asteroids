@@ -35,6 +35,10 @@ def main():
 			if player.collision(every_asteroid):
 				print("Game over!")
 				sys.exit()
+			for every_shot in all_shots:
+				if every_shot.collision(every_asteroid):
+					every_shot.kill()
+					every_asteroid.kill()
 		for sprite in drawable:
 			sprite.draw(screen)
 		dt = clock.tick(60) / 1000
